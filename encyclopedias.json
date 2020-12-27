@@ -1,0 +1,77 @@
+{
+    "encyclopedias": [
+		{
+			"name": "Wikipedia",
+			"imageName": "wikipedia",
+			"category": "general",
+			"searchUrl": "https://en.wikipedia.org/w/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+			"titleSelector": ".mw-search-results .mw-search-result-heading a",
+			"shortDescriptionSelector": ".mw-search-results .searchresult",
+			"urlSelector": ".mw-search-results .mw-search-result-heading a",
+			"textToRemove": "",
+			"duplicateResultFix": true,
+			"requiresPageLoading": false
+		},
+		{
+			"name": "Encyclopedia Britannica",
+			"imageName": "britannica",
+			"category": "general",
+			"searchUrl": "https://www.britannica.com/search?query=QUERY&page=:OFFSET:",
+			"titleSelector": ".mb-45 .font-18",
+			"shortDescriptionSelector": ".mb-45 .mt-5",
+			"urlSelector": ".mb-45 .font-18",
+			"textToRemove": "",
+			"duplicateResultFix": false,
+			"requiresPageLoading": true
+		},
+		{
+	        "name": "HandWiki",
+	        "imageName": "handwiki",
+	        "category": "science_tech",
+	        "searchUrl": "https://handwiki.org/wiki/search/query.php?query=QUERY&fulltext=1&start=:OFFSET:",
+	        "titleSelector": ".mw-search-results .mw-search-result-heading a",
+	        "shortDescriptionSelector": ".mw-search-results .searchresult",
+	        "urlSelector": ".mw-search-results .mw-search-result-heading a",
+	        "textToRemove": "",
+	        "duplicateResultFix": true,
+	        "requiresPageLoading": false
+	    },
+		{
+			"name": "Encyclopedia.com",
+			"imageName": "encyclopediadotcom",
+			"category": "general",
+			"searchUrl": "https://www.encyclopedia.com/gsearch?q=QUERY",
+			"titleSelector": ".gs-title .gs-title",
+			"shortDescriptionSelector": ".gs-snippet",
+			"urlSelector": ".gs-title .gs-title",
+			"textToRemove": " | Encyclopedia.com",
+			"duplicateResultFix": false,
+			"requiresPageLoading": true
+		},
+		{
+			"name": "Stanford Encyclopedia of Philosophy",
+			"imageName": "stanford_philosophy",
+			"category": "humanities",
+			"searchUrl": "https://plato.stanford.edu/search/searcher.py?query=QUERY&page=:OFFSET:",
+			"titleSelector": ".result_title",
+			"shortDescriptionSelector": ".result_snippet",
+			"urlSelector": ".result_listing .result_url a",
+			"textToRemove": "",
+			"duplicateResultFix": false,
+			"requiresPageLoading": false
+		},
+		{
+			"name": "Ballotpedia",
+			"imageName": "ballotpedia",
+			"category": "politics",
+			"searchUrl": "https://ballotpedia.org/wiki/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+			"titleSelector": ".mw-search-results .mw-search-result-heading a",
+			"shortDescriptionSelector": ".mw-search-results .searchresult",
+			"urlSelector": ".mw-search-results .mw-search-result-heading a",
+			"textToRemove": "",
+			"duplicateResultFix": false,
+			"requiresPageLoading": false
+		}
+
+	]
+}

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+export JEHEP_HOME=`pwd` # replace with server pass 
+
+################## do not edit ###############################
+JAVA_HEAP_SIZE=2048
+CLASSPATH=$JEHEP_HOME/encyclosearch.jar:$CLASSPATH
+CLASSPATH=$JEHEP_HOME/lib/java-string-similarity-1.0.1.jar:$CLASSPATH
+CLASSPATH=$JEHEP_HOME/lib/json-20201115.jar:$CLASSPATH
+CLASSPATH=$JEHEP_HOME/lib/jsoup-1.13.1.jar:$CLASSPATH
+CLASSPATH=$JEHEP_HOME/lib/slf4j-api.jar:$CLASSPATH
+
+DB_PATH=encyclopedias.json
+
+# start position
+Istart=$1
+
+# how many hits to show
+Ihits=$2
+
+# type: 0 - titles, 1 - fulltext
+Itype=$3
+
+# word to search
+IWord1=$4
+
+# second word to search
+IWord2=$5
+
+# second word to search
+IWord3=$6
+
+# word to search
+IWord4=$7
+
+# second word to search
+IWord5=$8
+
+# second word to search
+IWord6=$9
+
+
+# Use: ::: as seprator
+MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}"
+
+
+# Use: ::: as seprator
+MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}"
+
+if [ "$#" -eq 5 ]; then
+   MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}:::${IWord2}"
+fi
+
+if [ "$#" -eq  6 ]; then
+   MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}:::${IWord2}:::${IWord3}"
+fi
+
+if [ "$#" -eq  7 ]; then
+   MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}:::${IWord2}:::${IWord3}:::${IWord4}"
+fi
+
+if [ "$#" -eq  8 ]; then
+   MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}:::${IWord2}:::${IWord3}:::${IWord4}:::${IWord5}"
+fi
+
+if [ "$#" -eq  9 ]; then
+   MESS="${Istart}:::${Ihits}:::${Itype}:::${DB_PATH}:::${IWord1}:::${IWord2}:::${IWord3}:::${IWord4}:::${IWord5}:::${IWord6}"
+fi
+
+
+java -mx${JAVA_HEAP_SIZE}m -cp $CLASSPATH $OPTJJ io.gitlab.encsearch.Main $MESS $JEHEP_HOME
