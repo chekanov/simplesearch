@@ -1,0 +1,2 @@
+# simplesearch
+Simplified search
