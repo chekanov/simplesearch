@@ -37,16 +37,16 @@
         "requiresPageLoading": false
 	    },
 	    {
-        "name": "Encyclopedia.com",
-        "imageName": "encyclopediadotcom",
-        "category": "general",
-        "searchUrl": "https://www.encyclopedia.com/gsearch?q=QUERY",
-        "titleSelector": ".gs-title .gs-title",
-        "shortDescriptionSelector": ".gs-snippet",
-        "urlSelector": ".gs-title .gs-title",
-        "textToRemove": " | Encyclopedia.com",
-        "duplicateResultFix": false,
-        "requiresPageLoading": true
+        "name": "Scholarpedia",
+        "imageName": "scholarpedia",
+        "category": "education",
+        "searchUrl": "http://www.scholarpedia.org/w/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+        "titleSelector": ".mw-search-results .mw-search-result-heading a",
+        "shortDescriptionSelector": ".mw-search-results .searchresult",
+        "urlSelector": ".mw-search-results .mw-search-result-heading a",
+        "textToRemove": "",
+        "duplicateResultFix": true,
+        "requiresPageLoading": false
 	    },
 	    {
         "name": "Stanford Encyclopedia of Philosophy",
