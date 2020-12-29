@@ -35,6 +35,8 @@ public class EnSearch
 
 	private static String TYPE_WIKI="<img src='img/wiki.png' style='vertical-align:middle;margin:0;auto;'/>";
 
+        private static String TYPE_SEARCH="<img src='img/search.png' style='vertical-align:middle;margin:0;auto;'/>";
+
 
 	// Cache of SearchResults
 	public static ArrayList<SearchResults> cache = new ArrayList<SearchResults>();
@@ -158,6 +160,8 @@ public class EnSearch
 
 			ntot++;
 			if (ntot == 1) bestResult=data.articleTitle;
+			if (data.url.length()<1) continue;
+
 
 			RES=RES+"<li>";
 
@@ -167,7 +171,13 @@ public class EnSearch
 			TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' style='vertical-align:middle;margin:0;auto;'/>";
 
 			String desc=getTextAround(data.shortDescription,SEARCH);
-			String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a>"+"</span><span class=\"x2\"> "+ desc + "</span>";
+			//String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a>"+"</span><span class=\"x2\"> "+ desc + "</span>";
+
+
+                        String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a>  <a href='"+data.url+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a></span> <span class=\"x2\"> "+ desc + "</span>";
+
+
+
 			RES=RES+tmp+"</li>\n";
 
 		};
