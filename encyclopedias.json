@@ -37,18 +37,6 @@
         "requiresPageLoading": false
 	    },
 	    {
-        "name": "Scholarpedia",
-        "imageName": "scholarpedia",
-        "category": "education",
-        "searchUrl": "http://www.scholarpedia.org/w/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
-        "titleSelector": ".mw-search-results .mw-search-result-heading a",
-        "shortDescriptionSelector": ".mw-search-results .searchresult",
-        "urlSelector": ".mw-search-results .mw-search-result-heading a",
-        "textToRemove": "",
-        "duplicateResultFix": true,
-        "requiresPageLoading": false
-	    },
-	    {
         "name": "Stanford Encyclopedia of Philosophy",
         "imageName": "stanford_philosophy",
         "category": "humanities",
@@ -73,6 +61,18 @@
         "requiresPageLoading": false
 	    },
 	    {
+        "name": "Scholarpedia",
+        "imageName": "scholarpedia",
+        "category": "education",
+        "searchUrl": "http://www.scholarpedia.org/w/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+        "titleSelector": ".mw-search-results .mw-search-result-heading a",
+        "shortDescriptionSelector": ".mw-search-results .searchresult",
+        "urlSelector": ".mw-search-results .mw-search-result-heading a",
+        "textToRemove": "",
+        "duplicateResultFix": true,
+        "requiresPageLoading": false
+	    },
+	    {
         "name": "Citizendium",
         "imageName": "citizendium",
         "category": "general",
@@ -83,7 +83,20 @@
         "textToRemove": "",
         "duplicateResultFix": true,
         "requiresPageLoading": false
+	    },
+	    {
+        "name": "EduTech",
+        "imageName": "edutech",
+        "category": "education-tech",
+        "searchUrl": "http://edutechwiki.unige.ch/mediawiki/index.php?search=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+        "titleSelector": ".mw-search-results .mw-search-result-heading a",
+        "shortDescriptionSelector": ".mw-search-results .searchresult",
+        "urlSelector": ".mw-search-results .mw-search-result-heading a",
+        "textToRemove": "",
+        "duplicateResultFix": true,
+        "requiresPageLoading": false
 	    }
+
 
 	]
 }
