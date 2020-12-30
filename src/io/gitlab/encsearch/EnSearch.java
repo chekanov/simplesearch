@@ -35,7 +35,8 @@ public class EnSearch
 
 	private static String TYPE_WIKI="<img src='img/wiki.png' style='vertical-align:middle;margin:0;auto;'/>";
 
-        private static String TYPE_SEARCH="<img src='img/search.png' style='vertical-align:middle;margin:0;auto;'/>";
+        //private static String TYPE_SEARCH="<img src='img/search.png' style='vertical-align:middle;margin:0;auto;'/>";
+         private static String TYPE_SEARCH="<img src='img/search.png' title='Find' />";
 
 
 	// Cache of SearchResults
@@ -168,14 +169,16 @@ public class EnSearch
 			// correct search string
 			searchUrl=WikiString.correctSearch(data.searchUrl,onlyTitles,Offset, Limit);
 
-			TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' style='vertical-align:middle;margin:0;auto;'/>";
+			//TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' title='" + data.encyclopediaName +"' style='vertical-align:middle;margin:0;auto;'/>";
+                        TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' title='" + data.encyclopediaName +"'/>";
 
 			String desc=getTextAround(data.shortDescription,SEARCH);
 			//String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a>"+"</span><span class=\"x2\"> "+ desc + "</span>";
 
 
-                        String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a>  <a href='"+data.url+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a></span> <span class=\"x2\"> "+ desc + "</span>";
+                    //    String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a>"  +data.encyclopediaName+ " <a href='"+data.url+"'>"+data.articleTitle+"</a> </span> <span class=\"x2\"> "+ desc + "</span>";
 
+                        String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a> <a href='"+data.url+"'>"+data.articleTitle+"</a> </span> <span class=\"x2\"> "+ desc + "</span>";
 
 
 			RES=RES+tmp+"</li>\n";
