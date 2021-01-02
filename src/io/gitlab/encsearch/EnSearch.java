@@ -33,7 +33,7 @@ public class EnSearch
 
 	static public String HomeArea="";
 
-	private static String TYPE_WIKI="<img src='img/wiki.png' style='vertical-align:middle;margin:0;auto;'/>";
+	private static String TYPE_WIKI="<img src='img/wiki.png' style='vertical-align:middle;margin:0;'/>";
 
         //private static String TYPE_SEARCH="<img src='img/search.png' style='vertical-align:middle;margin:0;auto;'/>";
          private static String TYPE_SEARCH="<img src='img/search.png' title='Find' />";
@@ -70,7 +70,13 @@ public class EnSearch
 		String rightPart=str.substring(pos1+iwordsize, xpos2);
 		WORD=str.substring(pos1, pos1+iwordsize);
 
-		String Sdesc="..."+leftPart+"<b>"+WORD+"</b>"+rightPart+"...";
+		leftPart = leftPart.trim().replaceAll("\n ", "");
+                rightPart = rightPart.trim().replaceAll("\n ", "");
+
+		if (leftPart.startsWith("..") == false) leftPart=" ... "+leftPart;
+		if (rightPart.endsWith("..") == false)  rightPart=rightPart+" ... ";
+
+		String Sdesc=leftPart+"<b>"+WORD+"</b>"+rightPart;
 
 		return  Sdesc;
 	};
