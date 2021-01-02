@@ -48,7 +48,7 @@ public class EnSearch
 	private static String getTextAround(String str, String word) {
 
 
-		int maxcha=50;
+		int maxcha=100;
 		String TXT=str.toLowerCase();
 		String WORD=word.toLowerCase();
 
