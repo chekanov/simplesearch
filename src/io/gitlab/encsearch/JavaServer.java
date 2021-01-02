@@ -2,10 +2,21 @@ package io.gitlab.encsearch;
 
 import java.io.*;
 import java.net.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 
 // Start java server and listern.
-
+// We use a smiple caching (without experation) since we have a lot of memmory
+// Note: this cache is not on disk, so rebut will remove it
+// S.Chekanov
 public class JavaServer {
+
+
+        private static ConcurrentHashMap<String, String> enCache = new ConcurrentHashMap<>();
+        
+        private static final long MaxCounts=10000000; // 10M is max association 	
+
+
 	public static void main(String args[]) throws Exception {
 		String fromClient;
 		String toClient;
@@ -42,17 +53,29 @@ public class JavaServer {
 				break;
 			}
 
-			// split clinet string using :::
-			String[] arrOfStr = fromClient.split(":::");
+			// split client string using :::
+			//long istart = System.currentTimeMillis(); 
+			// find it in cache..
+                        String key=fromClient.toLowerCase();
+			if (enCache.containsKey(key) && enCache.mappingCount()<MaxCounts) {
+                             String output=(String)enCache.get(key);
+                             out.println(output);// set cache to client 
 
+			} else { 
 
-			// sent to client!
-			try {
-				out.println(EnSearch.process( arrOfStr, homearea ));
-			}  catch (Exception e) { }
+			     // sent to client real result!
+        		     try {
+                                String[] arrOfStr = fromClient.split(":::"); 
+		       		String output=EnSearch.process( arrOfStr, homearea );
+		                enCache.put(fromClient.toLowerCase(),output); // put to cache 	
+				out.println( output );
+			    }  catch (Exception e) { }
 
+			 } // end non-caching 
 
-
+	         	//long iend = System.currentTimeMillis(); 
+                        //System.out.println(iend-istart);
+                        // out.println(iend-istart);
 
 
 
