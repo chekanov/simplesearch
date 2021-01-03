@@ -57,8 +57,8 @@ public class EnSearch
 		int iwordsize=word.length();
 
 		int pos1=TXT.indexOf(WORD);
-		if (pos1<0) return " ... "+str+ " ... ";
-		if (pos1+iwordsize>ilen) return " ... "+str+ " ... ";
+		if (pos1<0) return str;
+		if (pos1+iwordsize>ilen) return str;
 
 		int xpos0=pos1-maxcha;
 		if (xpos0<0) xpos0=0;
@@ -70,8 +70,8 @@ public class EnSearch
 		String rightPart=str.substring(pos1+iwordsize, xpos2);
 		WORD=str.substring(pos1, pos1+iwordsize);
 
-		leftPart = leftPart.trim().replaceAll("\n ", "");
-                rightPart = rightPart.trim().replaceAll("\n ", "");
+		//leftPart = leftPart.trim().replaceAll("\n", "");
+                //rightPart = rightPart.trim().replaceAll("\n", "");
 
 		if (leftPart.startsWith("..") == false) leftPart=" ... "+leftPart;
 		if (rightPart.endsWith("..") == false)  rightPart=rightPart+" ... ";
