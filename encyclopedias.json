@@ -95,8 +95,19 @@
         "textToRemove": "",
         "duplicateResultFix": true,
         "requiresPageLoading": false
-	    }
-
+	   }, 
+	   {
+	"name": "Encyclopedia of Life",
+	"imageName": "eol",
+	"category": "other",
+	"searchUrl": "https://eol.org/search?utf8=%E2%9C%93&q=QUERY&fulltext=1&offset=:OFFSET:&limit=:LIMIT:",
+	"titleSelector": ".search-title",
+	"shortDescriptionSelector": ".search-info",
+	"urlSelector": ".search-title",
+	"textToRemove": "",
+	"duplicateResultFix": false,
+	"requiresPageLoading": false
+		}
 
 	]
 }

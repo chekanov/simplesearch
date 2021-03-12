@@ -1,0 +1,28 @@
+#!/bin/bash
+
+rm -f *_s.png
+rm -f *_b.png
+
+
+for filename in *.png
+# Traverse list of files ending with 1st argument.
+do
+
+# first, scale all figures and convert to png  
+# sacling to done for width, in PS mode, therefore
+# the quality should be very good!
+
+  OUTPUT=${filename}'.png'
+  INPUT=${filename}
+
+  newfilename="${filename%.*}"
+
+  convert ${filename} -resize 32x32! ${newfilename}_s.png
+  convert ${filename} -resize 46x46! ${newfilename}_b.png
+
+  echo ${filename}
+
+done
+
+chmod 755 *
+
