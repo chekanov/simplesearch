@@ -154,38 +154,29 @@ public class EnSearch
 		// String tmp="";
 		for(ArticleData data : results.results) {
 			//System.out.println(results.results);
-			/*
-			System.out.println(data.encyclopediaName);
-			System.out.println(data.encyclopediaImageName);
-			System.out.println(data.articleTitle);
-			System.out.println(data.shortDescription);
-			System.out.println(data.searchUrl);
-			System.out.println(data.url);
-			*/
-
+			//System.out.println(data.encyclopediaName);
+			//System.out.println(data.encyclopediaImageName);
+			//System.out.println(data.articleTitle);
+			//System.out.println(data.shortDescription);
+			//System.out.println(data.searchUrl);
+			//System.out.println(data.url);
 			//tmp=tmp+data.encyclopediaName+"\n"+data.encyclopediaImageName+"\n"+data.articleTitle+"\n"+data.shortDescription+"\n"+data.searchUrl;
 
 			ntot++;
 			if (ntot == 1) bestResult=data.articleTitle;
-			if (data.url.length()<1) continue;
+
+			// some fix - EOL returns empty string for data.url
+			if (data.encyclopediaImageName.indexOf("eol")<0)
+				    if (data.url.length()<1) continue;
 
 
 			RES=RES+"<li>";
 
 			// correct search string
 			searchUrl=WikiString.correctSearch(data.searchUrl,onlyTitles,Offset, Limit);
-
-			//TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' title='" + data.encyclopediaName +"' style='vertical-align:middle;margin:0;auto;'/>";
                         TYPE_WIKI="<img src='img/"+data.encyclopediaImageName+"_s.png' title='" + data.encyclopediaName +"'/>";
-
 			String desc=getTextAround(data.shortDescription,SEARCH);
-			//String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'><b>"+data.encyclopediaName+"</b>:  "+data.articleTitle+"</a>"+"</span><span class=\"x2\"> "+ desc + "</span>";
-
-
-                    //    String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a>"  +data.encyclopediaName+ " <a href='"+data.url+"'>"+data.articleTitle+"</a> </span> <span class=\"x2\"> "+ desc + "</span>";
-
                         String tmp="<span class=\"x1\"> "+ TYPE_WIKI + " <a href='"+searchUrl+"'>"+TYPE_SEARCH+"</a> <a href='"+data.url+"'>"+data.articleTitle+"</a> </span> <span class=\"x2\"> "+ desc + "</span>";
-
 
 			RES=RES+tmp+"</li>\n";
 
