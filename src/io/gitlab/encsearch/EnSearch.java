@@ -38,10 +38,8 @@ public class EnSearch
         //private static String TYPE_SEARCH="<img src='img/search.png' style='vertical-align:middle;margin:0;auto;'/>";
          private static String TYPE_SEARCH="<img src='img/search.png' title='Find' />";
 
-
 	// Cache of SearchResults
 	public static ArrayList<SearchResults> cache = new ArrayList<SearchResults>();
-
 
 
 
@@ -82,17 +80,8 @@ public class EnSearch
 	};
 
 
-
-
-
-
-
-
-
-	// last argument is homearea location for json files
-	//
+	// last argument is home area location for the encyclopedia.json file
 	public static String process(String[] args, String homearea) throws Exception {
-
 
 		if (args.length <4) {
 			return "No search arguments! Shoule be: Start Hits Type INDEX_PATH Word1 Word2 Word3 Word4 Word5";
@@ -125,9 +114,6 @@ public class EnSearch
 		if (args.length==9) {word5=args[8].trim(); SEARCH=word1+" "+word2+" "+word3+" "+word4+" "+word5;};
 		String word6="";
 		if (args.length==10) {word6=args[9].trim(); SEARCH=word1+" "+word2+" "+word3+" "+word4+" "+word5+" "+word6;};
-
-
-
 
 
 		try {
@@ -187,9 +173,7 @@ public class EnSearch
 
 		RES=RES+"</ol>\n";
 
-		//System.gc();
-
-/*		// append best article
+/*		// append best article (server specific) 
 		try {
 
 			final String filename= "/var/www/html/jwork/public_html/history.log" ;
@@ -202,7 +186,6 @@ public class EnSearch
 			System.err.println("IOException: " + ioe.getMessage());
 		}
 */
-
 
 		return RES;
 
