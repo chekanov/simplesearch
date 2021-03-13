@@ -196,7 +196,7 @@ public class EnSearch
 
 		//System.gc();
 
-		// append best article
+/*		// append best article
 		try {
 
 			final String filename= "/var/www/html/jwork/public_html/history.log" ;
@@ -208,7 +208,7 @@ public class EnSearch
 		{
 			System.err.println("IOException: " + ioe.getMessage());
 		}
-
+*/
 
 
 		return RES;
