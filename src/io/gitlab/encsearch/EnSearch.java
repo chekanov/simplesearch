@@ -166,7 +166,7 @@ public class EnSearch
 			if (ntot == 1) bestResult=data.articleTitle;
 
 			// some fix - EOL returns empty string for data.url
-			if (data.encyclopediaImageName.indexOf("eol")<0)
+			if (data.encyclopediaImageName.indexOf("eol")>-1)
                                    data.url=data.searchUrl; // EOL has more complex direct link (cannot be retrieved)
 	    
 			if (data.url.length()<1) continue;
