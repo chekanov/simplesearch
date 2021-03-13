@@ -167,7 +167,9 @@ public class EnSearch
 
 			// some fix - EOL returns empty string for data.url
 			if (data.encyclopediaImageName.indexOf("eol")<0)
-				    if (data.url.length()<1) continue;
+                                   data.url=data.searchUrl; // EOL has more complex direct link (cannot be retrieved)
+	    
+			if (data.url.length()<1) continue;
 
 
 			RES=RES+"<li>";
